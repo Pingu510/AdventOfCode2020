@@ -67,5 +67,13 @@ namespace AdventOfCode2020
             }
             return count;
         }
+
+        static string Day3()
+        {
+            var slopeHeading = (3, 1);            
+            var curremtPosX = (0, 0);
+
+
+        }
     }
 }
