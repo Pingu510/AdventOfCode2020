@@ -11,8 +11,8 @@ namespace AdventOfCode2020
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
-            //Console.WriteLine(Day1().ToString());
-            Console.WriteLine(Day2().ToString());
+
+            Console.WriteLine(Day3().ToString());
 
 
             Console.ReadKey();
@@ -68,12 +68,35 @@ namespace AdventOfCode2020
             return count;
         }
 
-        static string Day3()
+        static Int64 Day3()
         {
-            var slopeHeading = (3, 1);            
-            var curremtPosX = (0, 0);
+            long output = 1L * Day3f((1, 1)) * Day3f((3, 1)) * Day3f((5, 1)) * Day3f((7, 1)) * Day3f((1, 2));
+            return output;
+        }
 
+        static int Day3f((int x, int y) slope)
+        {
+            int treeCount = 0;
+            (int x, int y) slopeHeading = (slope.x, slope.y);
+            (int x, int y) currentPos = (0, 0);
+            currentPos = slopeHeading;
 
+            var input = InputReader.ReadFile("day3.txt");
+            var inputWidth = input[0].Length;
+            //modulus?
+            for (; currentPos.y < input.Length; currentPos.y = currentPos.y + slopeHeading.y)
+            {
+                var remainder = currentPos.x % inputWidth;
+
+                var place = input[currentPos.y][remainder];
+                if (place == '#')
+                {
+                    treeCount++;
+                }
+                currentPos.x = currentPos.x + slopeHeading.x;
+            }
+
+            return treeCount;
         }
     }
 }
