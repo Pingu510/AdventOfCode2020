@@ -1,9 +1,8 @@
-﻿using System;
+﻿using AdventOfCode2020.Days;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode2020
 {
@@ -13,7 +12,7 @@ namespace AdventOfCode2020
         {
             Console.WriteLine("Hello World");
 
-            Console.WriteLine(Day4().ToString());
+            Console.WriteLine(Day5.PartOne().ToString());
 
 
             Console.ReadKey();
