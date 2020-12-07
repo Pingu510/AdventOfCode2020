@@ -12,7 +12,8 @@ namespace AdventOfCode2020
         {
             Console.WriteLine("Hello World");
 
-            Console.WriteLine(Day6.PartTwo().ToString());
+            Console.WriteLine(Day7.PartOne().ToString());
+            Console.WriteLine(Day7.PartTwo().ToString());
 
 
             Console.ReadKey();
