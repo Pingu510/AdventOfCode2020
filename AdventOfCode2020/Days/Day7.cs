@@ -61,7 +61,10 @@ namespace AdventOfCode2020.Days
         {
             int count = 0;
             string[] split = { "contain no other bag", "contain", ",", "." };
-            var bags = input.FirstOrDefault(x => x.Contains(currentBag + "s contain")).Replace("bags", "bag").Split(split, StringSplitOptions.RemoveEmptyEntries);
+            var bags1 = input.FirstOrDefault(x => x.Contains(currentBag + "s contain"));
+            if (String.IsNullOrWhiteSpace(bags1)) return 1;
+
+            var bags = bags1.Replace("bags", "bag").Split(split, StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 1; i < bags.Length; i++)
             {
