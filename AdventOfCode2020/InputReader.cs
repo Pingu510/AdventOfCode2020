@@ -21,5 +21,14 @@ namespace AdventOfCode2020
             }
             return output;
         }
+        public static List<long> GetLargeInts(string[] input)
+        {
+            var output = new List<long>();
+            foreach (var item in input)
+            {
+                output.Add(long.Parse(item.Trim()));
+            }
+            return output;
+        }
     }
 }
