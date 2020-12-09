@@ -5,9 +5,7 @@ namespace AdventOfCode2020
 {
     public static class InputReader
     {
-        //static readonly string folderPath = @"C:\Users\fgidlund\source\repos\AdventOfCode2020\AdventOfCode2020\Inputs\";
-        static readonly string folderPath = @"C:\Users\frgi02\source\repos\Pingu510\AdventOfCode2020\AdventOfCode2020\Inputs\";
-        //static readonly string folderPath = @"G:\VisualStudioProjects\AdventOfCode2020\AdventOfCode2020\Inputs\";
+        static readonly string folderPath = System.IO.Path.GetFullPath(@"..\..\") + "Inputs\\";
 
         public static string[] ReadFile(string fileName)
         {
