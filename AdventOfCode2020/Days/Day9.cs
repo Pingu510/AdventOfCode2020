@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode2020.Days
 {
@@ -62,6 +60,44 @@ namespace AdventOfCode2020.Days
                 preamble[i] = input[i];
             }
             return preamble;
+        }
+
+        public static long PartTwo()
+        {
+            var match = PartOne();
+            var input = InputReader.GetLargeInts(InputReader.ReadFile("day9.txt"));
+
+
+            int startIndex = 0;
+            while (true)
+            {
+                long count = 0;
+                long sml = long.MaxValue;
+                long lrg = 0;
+
+                for (int i = startIndex; i < input.Count(); i++)
+                {
+                    count += input[i];
+                    sml = input[i] < sml ? input[i]: sml;
+                    lrg = input[i] > lrg ? input[i]: lrg;
+                    if (count == match)
+                    {
+                        Console.WriteLine(match);
+                        return sml + lrg;
+                    }
+                    else if (count > match)
+                    {
+                        startIndex++;
+                        break;
+                    }
+                }
+                if (startIndex >= input.Count)
+                {
+                    break;
+                }
+            }
+
+            return 0;
         }
     }
 }
