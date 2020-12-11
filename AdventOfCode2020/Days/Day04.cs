@@ -7,7 +7,7 @@ namespace AdventOfCode2020.Days
     /// <summary>
     /// Day 4: Passport Processing
     /// </summary>
-    public class Day4
+    public class Day04
     {
         class Day4Passport
         {

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AdventOfCode2020.Days
 {
-    public class Day9
+    public class Day09
     {
         public static long PartOne()
         {

@@ -6,7 +6,7 @@ namespace AdventOfCode2020.Days
     /// <summary>
     /// Day 2: Password Philosophy
     /// </summary>
-    public class Day2
+    public class Day02
     {
         public static int DayTwo()
         {

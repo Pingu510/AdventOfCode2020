@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode2020.Days
 {
     /// <summary>
     /// Day 6: Custom Customs
     /// </summary>
-    public class Day6
+    public class Day06
     {
         public static int PartOne()
         {
             int count = 0;
-            var input = InputReader.ReadFile("day6.txt");
+            var input = InputReader.ReadFile("dag6emma.txt");
             var groups = new List<string>();
 
             string groupAnswers = "";

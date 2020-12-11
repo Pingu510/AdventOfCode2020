@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AdventOfCode2020.Days
 {
-    public class Day7
+    public class Day07
     {
         static List<string> bagNames = new List<string>();
 

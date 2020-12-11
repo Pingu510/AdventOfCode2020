@@ -6,7 +6,7 @@ namespace AdventOfCode2020.Days
     /// <summary>
     /// Day 5: Binary Boarding
     /// </summary>
-    public class Day5
+    public class Day05
     {
         public static int PartOne()
         {

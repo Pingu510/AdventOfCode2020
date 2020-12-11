@@ -5,7 +5,7 @@ namespace AdventOfCode2020.Days
     /// <summary>
     /// Day 1: Report Repair
     /// </summary>
-    public class Day1
+    public class Day01
     {
         public static int DayOne()
         {

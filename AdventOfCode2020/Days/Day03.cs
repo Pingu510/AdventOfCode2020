@@ -5,7 +5,7 @@ namespace AdventOfCode2020.Days
     /// <summary>
     /// Day 3: Toboggan Trajectory
     /// </summary>
-    public class Day3
+    public class Day03
     {
         public static Int64 DayThree()
         {

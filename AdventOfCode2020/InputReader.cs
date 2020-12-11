@@ -9,8 +9,10 @@ namespace AdventOfCode2020
 
         public static string[] ReadFile(string fileName)
         {
+            //System.IO.File.Read(folderPath + fileName);
             return System.IO.File.ReadAllLines(folderPath + fileName);
         }
+        
 
         public static List<int> GetInts(string[] input)
         {
