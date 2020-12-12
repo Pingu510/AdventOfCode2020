@@ -8,7 +8,7 @@ namespace AdventOfCode2020
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
-            Console.WriteLine(Day06.PartOne().ToString());
+            Console.WriteLine(Day11.PartOne().ToString());
 
 
             Console.ReadKey();
