@@ -63,13 +63,84 @@ namespace AdventOfCode2020.Days
                 x = -x;
             }
 
-            var newD = Array.IndexOf(directions, currentDirection) + x +4;
+            var newD = Array.IndexOf(directions, currentDirection) + x + 4;
             return directions[newD % 4]; ;
         }
-    
+
         public static int PartTwo()
         {
-            return 0;
+            var current = new Boat { Direction = 'E', X = 0, Y = 0 };
+            // waypoint relative to ship not acctual position
+            var waypoint = new Boat { X = 10, Y = 1 };
+
+            var input = InputReader.ReadFile("day12.txt");
+
+            foreach (var instuction in input)
+            {
+                var number = Int32.Parse(instuction.Substring(1));
+                var command = instuction[0];
+
+
+                switch (command)
+                {
+                    case 'F':
+                        current.X += waypoint.X * number;
+                        current.Y += waypoint.Y * number;
+                        break;
+                    case 'N':
+                        waypoint.Y += number;
+                        break;
+                    case 'S':
+                        waypoint.Y += -number;
+                        break;
+                    case 'W':
+                        waypoint.X += -number;
+                        break;
+                    case 'E':
+                        waypoint.X += number;
+                        break;
+                    case 'L':
+                        TurnWaypoint(command, number, waypoint);
+                        break;
+                    case 'R':
+                        TurnWaypoint(command, number, waypoint);
+                        break;
+                    default:
+                        throw new IndexOutOfRangeException();
+                }
+            }
+
+            return Math.Abs(current.X) + Math.Abs(current.Y);
         }
+
+        static Boat TurnWaypoint(char turnType, int turnRadius, Boat waypoint)
+        {
+            var turn = turnRadius / 90;
+
+            switch (turnType)
+            {
+                case 'R':
+                    for (int i = 0; i < turn; i++)
+                    {
+                        var tmp = waypoint.Y;
+                        waypoint.Y = -waypoint.X;
+                        waypoint.X = tmp;
+                    }
+                    break;
+                case 'L':
+                    for (int i = 0; i < turn; i++)
+                    {
+                        var tmp = waypoint.X;
+                        waypoint.X = -waypoint.Y;
+                        waypoint.Y = tmp;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            return waypoint;
+        }
+
     }
 }
